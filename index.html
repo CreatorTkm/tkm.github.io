@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>表白爱心代码</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" href="css/shuxin.css">
+	<link rel="shortcut icon" href="./favicon.ico" />
+	<style type="text/css">
+		#gallery-wrapper {
+			position: relative;
+			max-width: 75%;
+			width: 75%;
+			margin: 50px auto;
+			overflow: hidden;
+		}
+
+		img.thumb {
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
+
+		.white-panel {
+			position: absolute;
+			background: white;
+			border-radius: 5px;
+			box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+			padding: 10px;
+			width: 75%;
+		}
+
+		.white-panel h1 {
+			font-size: 1em;
+			color: #A92733;
+		}
+
+		.white-panel h1 a {
+			color: #A92733;
+			display: block;
+			width: 100%;
+			white-space: normal;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+
+		.white-panel:hover {
+			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+			margin-top: -5px;
+			-webkit-transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
+			-o-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+		}
+
+		/* 点击复制，样式 */
+		#copy-tip {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: rgb(205, 203, 203);
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			z-index: 1000;
+		}
+
+		.fade-in {
+			animation: fadeIn 1s;
+		}
+
+		.fade-out {
+			animation: fadeOut 1s;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity: 1;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+		/* 鼠标样式 */
+		/* 爱心样式 */
+        #heart {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            margin-left: -25px;
+            margin-top: -25px;
+            background-image: url('./img/heart.png');
+            background-size: cover;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        /* 全局爱心(overlay全局透明，穿透作用到下面的元素) */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        /* 鼠标样式 */
+        .cursor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        body {
+            cursor: url('./img/cursor.png'), auto;
+        }
+	</style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="overlay"></div>
+	<section class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>表白爱心代码<span>点击图片查看效果，点击链接即可复制分享</span></h1>
+		</header>
+	</section>
+	<section id="gallery-wrapper">
+		<article class="white-panel">
+			<a href="lovestory/love1/index.html"><img src="img/image1.png" class="thumb"></a>
+			<h1>你是我的唯一</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love1</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love2/index.html"><img src="img/image2.png" class="thumb"></a>
+			<h1>给你我的心</h1>
+			<p id="text2" onclick="copyText(this)">https://tkm.github.io/lovestory/love2</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love3/index.html"><img src="img/image3.png" class="thumb"></a>
+			<h1>💗 Love you 💗</h1>
+			<p id="text3" onclick="copyText(this)">https://tkm.github.io/lovestory/love3</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love4/index.html"><img src="img/image4.png" class="thumb"></a>
+			<h1>给你的专属爱心❤️</h1>
+			<p id="text4" onclick="copyText(this)">https://tkm.github.io/lovestory/love4</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love5/index.html"><img src="img/image5.png" class="thumb"></a>
+			<h1>执子之手，与子共生</h1>
+			<p id="text5" onclick="copyText(this)">https://tkm.github.io/lovestory/love5</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love6/index.html"><img src="img/image6.png" class="thumb"></a>
+			<h1>恋爱年轮</h1>
+			<p id="text6" onclick="copyText(this)">https://tkm.github.io/lovestory/love6</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love7/index.html"><img src="img/image7.png" class="thumb"></a>
+			<h1>迸射爱心</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love7</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love8/index.html"><img src="img/image8.png" class="thumb"></a>
+			<h1>爱你的68种</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love8</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love9/index.html"><img src="img/image9.png" class="thumb"></a>
+			<h1>告白信</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love9</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love10/index.html"><img src="img/image10.png" class="thumb"></a>
+			<h1>翻涌的心</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love10</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love11/index.html"><img src="img/image11.png" class="thumb"></a>
+			<h1>心跳</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love11</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love12/index.html"><img src="img/image12.png" class="thumb"></a>
+			<h1>biu</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love12</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love13/index.html"><img src="img/image13.png" class="thumb"></a>
+			<h1>浪漫亲吻</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love13</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love14/index.html"><img src="img/image14.png" class="thumb"></a>
+			<h1>把你放在心上</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love14</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love15/index.html"><img src="img/image15.png" class="thumb"></a>
+			<h1>至死不渝</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love15</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love16/index.html"><img src="img/image16.png" class="thumb"></a>
+			<h1>就爱你怎么办</h1>
+			<p id="text6" onclick="copyText(this)">https://tkm.github.io/lovestory/love16</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love17/index.html"><img src="img/image17.png" class="thumb"></a>
+			<h1>心跳加速</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love17/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love18/index.html"><img src="img/image18.png" class="thumb"></a>
+			<h1>川流不息</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love18/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love19/index.html"><img src="img/image19.png" class="thumb"></a>
+			<h1>爱心射线</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love19/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love20/index.html"><img src="img/image20.png" class="thumb"></a>
+			<h1>梦幻玫瑰</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love20/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love21/index.html"><img src="img/image21.png" class="thumb"></a>
+			<h1>赠汝玫瑰</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love21/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love22/index.html"><img src="img/image22.png" class="thumb"></a>
+			<h1>我们在一起吧</h1>
+			<p id="text2" onclick="copyText(this)">https://tkm.github.io/lovestory/love22/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love23/index.html"><img src="img/image23.png" class="thumb"></a>
+			<h1>💗Our Love Story</h1>
+			<p id="text3" onclick="copyText(this)">https://tkm.github.io/lovestory/love23/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love24/index.html"><img src="img/image24.png" class="thumb"></a>
+			<h1>爱心❤流星雨</h1>
+			<p id="text4" onclick="copyText(this)">https://tkm.github.io/lovestory/love24/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love25/index.html"><img src="img/image25.png" class="thumb"></a>
+			<h1>跳动的爱</h1>
+			<p id="text5" onclick="copyText(this)">https://tkm.github.io/lovestory/love25/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love26/index.html"><img src="img/image26.png" class="thumb"></a>
+			<h1>五彩缤纷的爱</h1>
+			<p id="text6" onclick="copyText(this)">https://tkm.github.io/lovestory/love26/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love27/index.html"><img src="img/image27.png" class="thumb"></a>
+			<h1>I LOVE YOU</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love27/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love28/index.html"><img src="img/image28.png" class="thumb"></a>
+			<h1>李峋爱心代码原始版</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love28/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love29/index.html"><img src="img/image29.png" class="thumb"></a>
+			<h1>李峋爱心代码进阶版</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love29/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love30/index.html"><img src="img/image30.png" class="thumb"></a>
+			<h1>像素心</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love30/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love31/index.html"><img src="img/image31.png" class="thumb"></a>
+			<h1>心心相印</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love31/index.html</p>
+		</article>
+
+		<article class="white-panel">
+			<a href="lovestory/love32/index.html"><img src="img/image32.png" class="thumb"></a>
+			<h1>围绕你旋转</h1>
+			<p id="text1" onclick="copyText(this)">https://tkm.github.io/lovestory/love32/index.html</p>
+		</article>
+		<div style="all: initial;">
+			<div id="copy-tip" class="fade-in" style="color: #A92733; display: none;">内容已复制</div>
+		</div>
+	</section>
+	<footer class="related">
+		<h3>如果你喜欢这个网页，希望你可以分享给你的朋友</h3>
+		<br><br><br>
+	</footer>
+
+
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/pinterest_grid.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$("#gallery-wrapper").pinterest_grid({
+				no_columns: 4,
+				padding_x: 10,
+				padding_y: 10,
+				margin_bottom: 50,
+				single_column_breakpoint: 700
+			});
+
+		});
+	</script>
+	<script>//点击复制
+		function copyText(element) {
+			// 获取要复制的文本
+			var text = element.innerText;
+
+			// 创建一个临时的textarea元素，用于将文本复制到剪切板
+			var tempTextarea = document.createElement("textarea");
+			tempTextarea.value = text;
+
+			// 将textarea元素添加到DOM中，并将其设置为不可见
+			document.body.appendChild(tempTextarea);
+			tempTextarea.select();
+
+			// 执行复制操作
+			document.execCommand("copy");
+
+			// 从DOM中移除临时的textarea元素
+			document.body.removeChild(tempTextarea);
+
+			// 显示提示
+			var copyTip = document.getElementById("copy-tip");
+			copyTip.style.display = "block";
+
+			// 隐藏提示
+			setTimeout(function () {
+				copyTip.style.display = "none";
+			}, 2000);
+		}
+	</script>
+	<script>
+		var overlay = document.querySelector('.overlay');
+		var heart = document.createElement('div');
+		heart.id = 'heart';
+		overlay.appendChild(heart);
+	
+		document.addEventListener('click', function (e) {
+			var xPos = e.clientX;
+			var yPos = e.clientY;
+	
+			heart.style.top = yPos + 'px';
+			heart.style.left = xPos + 'px';
+			heart.style.opacity = 1;
+	
+			setTimeout(function () {
+				heart.style.opacity = 0;
+			}, 1000);
+		});
+	</script>
+</body>
+
+</html>
